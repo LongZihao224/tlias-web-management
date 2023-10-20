@@ -28,4 +28,15 @@
    2. 部门名称，必填，唯一，长度为2-10位
 3. 删除部门
    1. 弹出确认框，删除成功后刷新页面
- 
+## 3. 员工管理
+1. 分页查询
+   2. 请求参数：页码，每页条数
+   3. 响应结果：总条数，当前页数据
+   4. 注解：@RequestParam(defaultValue = "1") Integer pageNum // 设置请求参数默认值
+   5. 简化分页查询的方法：PageHelper.startPage(pageNum, pageSize);
+![img.png](img.png)
+2. 分页查询+条件查询
+   1. 条件分页查询
+      1. 条件查询：动态SQL->XML映射文件
+      2. 分页查询：PageHelper.startPage(pageNum, pageSize);
+3. 删除员工
