@@ -40,3 +40,4 @@
       1. 条件查询：动态SQL->XML映射文件
       2. 分页查询：PageHelper.startPage(pageNum, pageSize);
 3. 删除员工
+4. 新增员工

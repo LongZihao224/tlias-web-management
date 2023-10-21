@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.itheima.service.EmpService;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -29,5 +30,19 @@ public class EmpServiceImpl implements EmpService {
         // 封装PageBean
         PageBean pageBean = new PageBean(p.getTotal(), p.getResult());
         return pageBean;
+    }
+
+    @Override
+    public void delete(List<Integer> ids) {
+        // 调用dao批量删除
+        empMapper.delete(ids);
+    }
+
+    @Override
+    public void add(Emp emp) {
+        emp.setCreateTime(LocalDateTime.now());
+        emp.setUpdateTime(LocalDateTime.now());
+        // 调用dao新增
+        empMapper.add(emp);
     }
 }
