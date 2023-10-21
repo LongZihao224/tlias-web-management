@@ -34,10 +34,17 @@
    3. 响应结果：总条数，当前页数据
    4. 注解：@RequestParam(defaultValue = "1") Integer pageNum // 设置请求参数默认值
    5. 简化分页查询的方法：PageHelper.startPage(pageNum, pageSize);
-![img.png](img.png)
+      ![img.png](img.png)
 2. 分页查询+条件查询
    1. 条件分页查询
       1. 条件查询：动态SQL->XML映射文件
       2. 分页查询：PageHelper.startPage(pageNum, pageSize);
 3. 删除员工
 4. 新增员工
+## 4. 文件上传
+文件上传的步骤(使用阿里云服务)：
+![img_1.png](img_1.png)
+1. 文件上传介绍
+2. 前端页面三要素(file表单项、post方式、multipart/form-data)
+3. 服务端接收文件
+4. 文件存储方式
