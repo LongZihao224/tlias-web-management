@@ -45,4 +45,23 @@ public class EmpServiceImpl implements EmpService {
         // 调用dao新增
         empMapper.add(emp);
     }
+
+    @Override
+    public Emp findById(Integer id) {
+        // 调用dao根据id查询
+        return empMapper.findById(id);
+    }
+
+    @Override
+    public void update(Emp emp) {
+        emp.setUpdateTime(LocalDateTime.now());
+        // 调用dao修改
+        empMapper.update(emp);
+    }
+
+    @Override
+    public Emp login(Emp emp) {
+        // 调用dao根据用户名查询
+        return empMapper.findByUsernameAndPassword(emp);
+    }
 }

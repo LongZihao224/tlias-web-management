@@ -28,4 +28,24 @@ public interface EmpService {
      * @param emp
      */
     void add(Emp emp);
+
+    /**
+     * 根据id查询员工信息
+     * @param id
+     * @return
+     */
+    Emp findById(Integer id);
+
+    /**
+     * 修改员工信息
+     * @param emp
+     */
+    void update(Emp emp);
+
+    /**
+     * 员工登录
+     * @param emp
+     * @return
+     */
+    Emp login(Emp emp);
 }

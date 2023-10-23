@@ -56,4 +56,27 @@ public class EmpController {
         empService.add(emp);
         return Result.success();
     }
+
+    /**
+     * 根据id查询员工信息
+     */
+    @GetMapping("/{id}")
+    public Result findById(@PathVariable Integer id) {
+        log.info("根据id查询员工信息，参数：id = {}", id);
+        // 调用Service进行查询
+        Emp emp = empService.findById(id);
+        return Result.success(emp);
+    }
+
+    /**
+     * 根据id修改员工信息
+     * 接收的参数是JSON格式的字符串，需要使用@RequestBody注解
+     */
+    @PutMapping
+    public Result update(@RequestBody Emp emp) {
+        log.info("修改员工信息，参数：emp = {}", emp);
+        // 调用Service进行修改
+        empService.update(emp);
+        return Result.success();
+    }
 }
