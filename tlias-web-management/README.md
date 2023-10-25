@@ -76,5 +76,22 @@
    2. JWT令牌 ❤
       ![img_4.png](img_4.png)
       解决了上述缺点，但是缺点是需要自己实现 令牌存储在客户端，减轻服务器压力
+      
+      自己实现：登陆成功之后下发令牌
    3. 过滤器Filter
+      ![img_5.png](img_5.png)
+      Filter和Interceptor都是基于Jwt令牌的，只是二者拦截的方式有区别
+      ![img_6.png](img_6.png)
+      自己实现过滤器链(AbcFilter)
+      ![img_7.png](img_7.png)
+      LoginCheckFilter.java文件就是自己实现的过滤器
    4. 拦截器Interceptor
+      ![img_8.png](img_8.png)
+      配置拦截器：
+      ![img_9.png](img_9.png)
+      ![img_10.png](img_10.png)
+   5. 过滤器和拦截器的执行流程
+      ![img_11.png](img_11.png)
+      Filter 是Servlet规范中的一部分，而Interceptor是SpringMVC框架自己的
+## 8. 异常处理
+![img_12.png](img_12.png)
