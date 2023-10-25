@@ -95,3 +95,17 @@
       Filter 是Servlet规范中的一部分，而Interceptor是SpringMVC框架自己的
 ## 8. 异常处理
 ![img_12.png](img_12.png)
+## 9. 事务管理
+@Transactional注解
+
+可以直接将该注解加在方法上，比如ServiceImpl中的方法
+
+默认情况下，只有运行时异常，事务才会回滚，如果想要非运行时异常也回滚，需要设置rollbackFor属性
+
+事务的传播行为是：如果在一个事务的方法中，调用了另外一个事务的方法，那么这两个事务是如何管理的事务的传播行为可以用@Propagation注解来设置
+主要使用的是REQUIRED和REQUIRES_NEW
+![img_13.png](img_13.png)
+即使出现异常，记录日志的代码也要正常执行
+
+所以，插入日志应该选择使用REQUIRES_NEW，创建一个新的事务，而不是使用默认的REQUIRED加入到原来的事务中去，变成一个事务，如果变成了一个事务，那么
+出现异常，日志也不会插入到数据库中去
